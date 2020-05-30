@@ -19,7 +19,7 @@ public class TransHelper {
 
     private final static Logger logger = LoggerFactory.getLogger(TransHelper.class);
 
-    private final static int LINE_TO_SKIP = 2140;
+    private final static int LINE_TO_SKIP = 2590;
 
     public static List<Talk> trans() {
         List<Talk> talks = new LinkedList<>();
@@ -46,7 +46,7 @@ public class TransHelper {
                 }
                 Talk talk = new Talk();
 
-                String regEx = "((20[0-9]{2})-(0?[1-9]|1[0-2])-((0?[1-9])|([12][0-9])|30|31) ([0]|[12][0-9]):((0?[1-9])|([1-5][0-9])):((0?[1-9])|([1-5][0-9])))" +
+                String regEx = "((20[0-9]{2})-(0?[1-9]|1[0-2])-((0?[1-9])|([12][0-9])|30|31) ([0-9]|[12][0-9]):((0?[1-9])|([1-5][0-9])):((0?[1-9])|([1-5][0-9])))" +
                         " (.*)\\(.*\\)";
 //    String regEx = "[0-9]{4}-[0-9]{2}-[0-9]{2}";
                 Pattern pattern = Pattern.compile(regEx);
@@ -68,8 +68,6 @@ public class TransHelper {
                     }
                     talk.setTime(tempTime);
                 }
-
-
                 talk.setContent(tempStr);
 //                System.out.println(tempTime);
 //                System.out.println(tempStr);
